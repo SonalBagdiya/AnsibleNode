@@ -17,25 +17,25 @@
   file: path=/var/www state=directory
 
 - name: Fetch the application source
-  git: repo={{ git_repo }} dest=/var/www/chesshub accept_hostkey=yes force=yes
+  git: repo={{ git_repo }} dest=/var/www/DemoProject accept_hostkey=yes force=yes
 
 - name: Install custom application configuration
-  template: src=default.json dest=/var/www/chesshub/config/default.json
+  template: src=default.json dest=/var/www/DemoProject/config/default.json
 
 - name: Install Dependencies
-  npm: path=/var/www/chesshub state=present
+  npm: path=/var/www/DemoProject state=present
 
-- name: Initialize the Data to elasticsearch and mongodb
-  command: chdir=/var/www/chesshub node initData.js
+#- name: Initialize the Data to elasticsearch and mongodb
+ # command: chdir=/var/www/DemoProject node initData.js
 
-- name: Upload running script
-  copy: src=run.sh dest=/tmp/run.sh mode=700 owner=root group=root
+#- name: Upload running script
+#  copy: src=run.sh dest=/tmp/run.sh mode=700 owner=root group=root
 
-- name: Make sure that the application is not running
-  command: forever list
-  register: list_result
-  changed_when: false
+#- name: Make sure that the application is not running
+ # command: forever list
+  #register: list_result
+ # changed_when: false
  
-- name: Run the application with Forever
-  shell: chdir=/var/www/chesshub forever start app.js
-  when: list_result.stdout.find('/var/www/chesshub/app.js') == -1
+#- name: Run the application with Forever
+ # shell: chdir=/var/www/DemoProject forever start app.js
+ # when: list_result.stdout.find('/var/www/DemoProject/app.js') == -1

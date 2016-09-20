@@ -1,11 +1,8 @@
 ---
-# Provision Droplets
-#- include: do_droplets.yml
-
 # Common tasks
 - hosts:
-    - node2
-    - node3
+  - node2
+  - node3
   become: yes
   remote_user: root
   gather_facts: force
@@ -17,9 +14,8 @@
   become: yes
   remote_user: root
   roles:
-    - { role: mongo, tags: ["mongo"] }
-   # - { role: elasticsearch, tags: ["elasticsearch"] }
-
+    - { role: mongo }
+ 
 # Frontend play
 - hosts: node2
   become: yes

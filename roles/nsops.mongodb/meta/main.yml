@@ -1,0 +1,15 @@
+---
+galaxy_info:
+  author: Natalio Ruiz
+  description: MongoDB
+  license: MIT
+  min_ansible_version: 2.1
+  platforms:
+  - name: Ubuntu
+    versions:
+    - xenial
+  galaxy_tags:
+  - development
+  - database
+
+dependencies: []

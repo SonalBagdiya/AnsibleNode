@@ -25,8 +25,24 @@
 - name: Install Dependencies
   npm: path=/var/www/DemoProject state=present
 
+- name: Create service to start application
+  template: src=nodeapp.conf dest=/etc/init/nodeapp.conf
+
+- name: Create symbolic link of service
+  file: src=/etc/init/nodeapp.conf dest=/etc/init.d/nodeapp state=link
+  #command: ln -s  /etc/init/nodeapp.conf  /etc/init.d/nodeapp
+
+- name: ensure nodeapp is started
+  service: name=nodeapp state=started 
+
+- name: ensure nodeapp is stopped
+  service: name=nodeapp state=stopped 
+
+- name: ensure nodeapp is restarted
+  service: name=nodeapp state=restarted 
+
 #- name: Initialize the Data to elasticsearch and mongodb
- # command: chdir=/var/www/DemoProject node initData.js
+ # command: chdir=/var/www/DemoProject node app.js
 
 #- name: Upload running script
 #  copy: src=run.sh dest=/tmp/run.sh mode=700 owner=root group=root

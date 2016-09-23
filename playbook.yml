@@ -14,7 +14,7 @@
   become: yes
   remote_user: root
   roles:
-    - { role: mongo }
+    - { role: gheydon.mongodb }
  
 # Frontend play
 - hosts: node2

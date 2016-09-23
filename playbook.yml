@@ -1,13 +1,13 @@
 ---
 # Common tasks
-- hosts:
-  - node2
-  - node3
+- hosts: all
+ # - node2
+  #- node3
   become: yes
   remote_user: root
   gather_facts: force
   roles:
-    - { role: common, tags: ["common"] }
+   - { role: common, tags: ["common"] }
 
 # Backend play
 - hosts: node3

@@ -1,13 +1,13 @@
 ---
 
 common_packages:
-    - vim
-    - screen
+    # - vim
+    # - screen
     - sudo 
-    - htop
-    - strace
-    - curl
-    - wget
+    # - htop
+    # - strace
+    # - curl
+    # - wget
     - git-core
 
 common_user: True
@@ -18,6 +18,6 @@ user:
   - name: id_rsa
     key: "{{ lookup('file', '/home/vagrant/.ssh/id_rsa.pub') }}"
 
-# common_swap variables
-swap_size: 512
-swap_path: /swapfile
+# # common_swap variables
+# swap_size: 512
+# swap_path: /swapfile

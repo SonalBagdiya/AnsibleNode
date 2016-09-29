@@ -1,6 +1,6 @@
 ---
-- name: Install Forever
-  npm: name=forever global=true state=latest
+# - name: Install Forever
+#   npm: name=forever global=true state=latest
 
 - name: Disable nginx default site
   file: path=/etc/nginx/sites-enabled/default state=absent

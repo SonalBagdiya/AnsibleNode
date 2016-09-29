@@ -1,2 +1,2 @@
-# Chesshub_Ansible
+# Ansible_Project
 Ansible playbook for ChessHub application 

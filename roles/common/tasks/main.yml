@@ -1,4 +1,8 @@
 ---
+- name: Adding user
+  include: user.yml
+  when: common_user == True
+  
 - name: Install needed packages
   apt: name={{ item }} state=present update_cache=yes
   with_items: common_packages
@@ -13,6 +17,4 @@
 #   include: swap.yml
 #   when: common_swap == True
 
-- name: Adding user
-  include: user.yml
-  when: common_user == True
+

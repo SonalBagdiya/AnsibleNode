@@ -1,11 +1,15 @@
 ---
-- name: Adding user
-  include: user.yml
-  when: common_user == True
-  
-- name: Install needed packages
-  apt: name={{ item }} state=present update_cache=yes
-  with_items: common_packages
+
+- name: install base packages
+  apt: pkg={{item}} state=present update_cache=yes cache_valid_time=604800
+  with_items:
+    - sysstat
+    - htop
+    - git
+
+#- name: Install needed packages
+#  apt: name={{ item }} state=present update_cache=yes
+#  with_items: common_packages
 
 # - name: Enable Screen Scrolling
 #   lineinfile: dest=/etc/screenrc line="termcapinfo xterm* ti@:te@" insertafter=EOF
@@ -17,4 +21,6 @@
 #   include: swap.yml
 #   when: common_swap == True
 
-
+#- name: Adding user
+#  include: user.yml
+#  when: common_user == True

@@ -1,0 +1,9 @@
+[node]
+13.127.103.240 ansible_user=ubuntu ansible_ssh_private_key_file=/var/lib/jenkins/.ssh/test.pem
+13.127.10.231  ansible_user=ubuntu ansible_ssh_private_key_file=/var/lib/jenkins/.ssh/test.pem
+
+[node2]
+13.127.103.240 ansible_user=ubuntu ansible_ssh_private_key_file=/var/lib/jenkins/.ssh/test.pem
+
+[node3]
+13.127.10.231 ansible_user=ubuntu ansible_ssh_private_key_file=/var/lib/jenkins/.ssh/test.pem

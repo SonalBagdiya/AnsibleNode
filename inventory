@@ -4,6 +4,8 @@
 
 [node2]
 13.127.103.240 ansible_user=ubuntu ansible_ssh_private_key_file=/var/lib/jenkins/.ssh/test.pem
+35.154.207.92 ansible_user=ubuntu ansible_ssh_private_key_file=/var/lib/jenkins/.ssh/test.pem
 
 [node3]
 13.127.10.231 ansible_user=ubuntu ansible_ssh_private_key_file=/var/lib/jenkins/.ssh/test.pem
+13.126.223.213 ansible_user=ubuntu ansible_ssh_private_key_file=/var/lib/jenkins/.ssh/test.pem

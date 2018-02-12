@@ -1,7 +1,7 @@
 ---
 # Common tasks
 - hosts: all
- # - node2
+  #- node2
   #- node3
   become: yes
   remote_user: root

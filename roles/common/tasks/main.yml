@@ -1,5 +1,24 @@
 ---
 
+#- name: ssh-keys | Add short name to known_hosts
+#  local_action: shell ssh-keyscan -p {{ansible_ssh_port|default(22)}} -H {{inventory_hostname}} 2> /dev/null >> /root/.ssh/known_hosts
+#  ignore_errors: True
+#  become: false
+#  when: configure_ssh and configure_cluster
+#  tags:
+#   - sshkeys
+#
+#- name: ssh-keys | Copy known_hosts to oracle user
+#  copy:
+#    src: "{{keyfile}}"
+#    dest: "/home/{{ item.username }}/.ssh/known_hosts"
+#    owner: "{{ item.username }}"
+#    group: "{{ item.primgroup }}"
+#  with_items: "{{oracle_users}}"
+#  when: configure_ssh and configure_cluster
+#  tags:
+#   - sshkeys
+
 - name: install base packages
   apt: pkg={{item}} state=present update_cache=yes cache_valid_time=604800
   with_items:

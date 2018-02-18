@@ -28,6 +28,9 @@
 - name: Create service to start application
   template: src=nodeapp.conf dest=/etc/init/nodeapp.conf
 
+- name: Copy index html
+  template: src=index.j2 dest=/var/www/html/index.html
+
 - name: Create symbolic link of service
   file: src=/etc/init/nodeapp.conf dest=/etc/init.d/nodeapp state=link
   #command: ln -s  /etc/init/nodeapp.conf  /etc/init.d/nodeapp

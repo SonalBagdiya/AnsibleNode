@@ -1,13 +1,8 @@
 [node]
-34.216.68.97 ansible_user=ubuntu ansible_ssh_private_key_file=/var/lib/jenkins/sonal-test.pem
 54.201.185.220  ansible_user=ubuntu ansible_ssh_private_key_file=/var/lib/jenkins/sonal-test.pem
 
 [node2]
-#54.244.205.228 ansible_user=ubuntu ansible_ssh_private_key_file=/var/lib/jenkins/sonal-test.pem
-#52.37.31.43 ansible_user=ubuntu ansible_ssh_private_key_file=/var/lib/jenkins/sonal-test.pem
-34.216.68.97 ansible_user=ubuntu ansible_ssh_private_key_file=/var/lib/jenkins/sonal-test.pem
 54.201.185.220  ansible_user=ubuntu ansible_ssh_private_key_file=/var/lib/jenkins/sonal-test.pem
 
 [node3]
-34.216.68.97 ansible_user=ubuntu ansible_ssh_private_key_file=/var/lib/jenkins/sonal-test.pem
 54.201.185.220  ansible_user=ubuntu ansible_ssh_private_key_file=/var/lib/jenkins/sonal-test.pem
